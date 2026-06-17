@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 50% 8%;
+    --foreground: 215 25% 90%;
+    --card: 216 45% 11%;
+    --card-foreground: 215 25% 90%;
+    --popover: 216 45% 11%;
+    --popover-foreground: 215 25% 90%;
+    --primary: 7 75% 60%;
+    --primary-foreground: 216 50% 8%;
+    --secondary: 216 35% 17%;
+    --secondary-foreground: 215 25% 90%;
+    --muted: 216 35% 17%;
+    --muted-foreground: 215 15% 48%;
+    --accent: 40 60% 53%;
+    --accent-foreground: 216 50% 8%;
+    --destructive: 7 75% 60%;
+    --destructive-foreground: 216 50% 8%;
+    --border: 215 15% 25%;
+    --input: 215 15% 25%;
+    --ring: 7 75% 60%;
+    --radius: 0.5rem;
+    --sidebar-background: 216 45% 11%;
+    --sidebar-foreground: 215 25% 90%;
+    --sidebar-primary: 7 75% 60%;
+    --sidebar-primary-foreground: 216 50% 8%;
+    --sidebar-accent: 216 35% 17%;
+    --sidebar-accent-foreground: 215 25% 90%;
+    --sidebar-border: 215 15% 25%;
+    --sidebar-ring: 7 75% 60%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Geist', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0A1628;
+    color: #E2E8F0;
+    overflow-x: hidden;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .font-geist-mono {
+    font-family: 'Geist Mono', monospace;
+  }
+
+  .text-coral {
+    color: #E85D4C;
+  }
+
+  .text-amber {
+    color: #D4A03A;
+  }
+
+  .text-cyan-accent {
+    color: #3B8EA5;
+  }
+
+  .text-slate-muted {
+    color: #64748B;
+  }
+
+  .bg-surface-dark {
+    background-color: #111D32;
+  }
+
+  .bg-surface-light {
+    background-color: #1A2744;
+  }
+
+  .bg-navy {
+    background-color: #0A1628;
+  }
+
+  .border-subtle {
+    border-color: rgba(100, 116, 139, 0.15);
+  }
+
+  .section-label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #64748B;
+  }
+
+  .perspective-container {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+  }
+
+  .rotate-text span {
+    display: inline-block;
+    transform-origin: 50% 50%;
+    transform: rotateX(90deg);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+  }
+
+  .rotate-text.revealed span {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .will-change-transform {
+    will-change: transform;
+  }
+}
